@@ -1,11 +1,13 @@
 <?php
+require_once "conecta.php";
 $nome = $_POST["nome"]; 
 $fone = $_POST["fone"];
 $email = $_POST["email"];
 $insta = $_POST["insta"];
 //echo("$nome, $fone, $email, $insta");
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=contatinhos', 'root', Null);
+  
+    $pdo = new PDO('mysql:host=danielgomes.pro.br';'dbname=danielgo_contato'; 'daniel_alunos'; 'estacio2022');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
     $stmt = $pdo->prepare('INSERT INTO pessoas  VALUES(:id, :nome, :fone, :email, :insta)');
@@ -18,7 +20,8 @@ try {
     ));
   
     echo("<script>alert('Dados registrados com sucesso..');</script>");
-  } catch(PDOException $e) {
+  } 
+  catch(PDOException $e) {
     echo 'Error: ' . $e->getMessage();
   }  
 ?>
