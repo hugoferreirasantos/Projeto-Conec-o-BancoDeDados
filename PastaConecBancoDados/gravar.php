@@ -4,11 +4,12 @@ $nome = $_POST["nome"];
 $fone = $_POST["fone"];
 $email = $_POST["email"];
 $insta = $_POST["insta"];
-//echo("$nome, $fone, $email, $insta");
+
 try {
   
-    $pdo = new PDO('mysql:host=danielgomes.pro.br';'dbname=danielgo_contato'; 'daniel_alunos'; 'estacio2022');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO('mysql:host=danielgomes.pro.br;dbname=danielgo_contato', 'danielgo_alunos', 'estacio2022');
+     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
   
     $stmt = $pdo->prepare('INSERT INTO pessoas  VALUES(:id, :nome, :fone, :email, :insta)');
     $stmt->execute(array(
