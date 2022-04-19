@@ -22,8 +22,8 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
       <td>{$linha['fone']}</td>
       <td>{$linha['email']}</td>
       <td>{$linha['insta']}</td>
-      <td>Editar</td>
-      <td>Excluir</td>
+      <td><img src=imgs/edit.png height=30></td>
+      <td><a href=deletar.php?id={$linha['id']}><img src=imgs/del.png height=30></a></td>
       </tr>";
 }
  echo "</table><br><h1 onclick=print();>IMPRIMIR</h1>";
